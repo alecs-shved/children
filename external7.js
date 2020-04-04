@@ -42,8 +42,8 @@ var zvobj = {
 };
 
 var imag0 = ["image0/gora.jpeg", "image0/kasha.jpeg", "image0/mama.jpeg", "image0/masha.jpeg", "image0/mir.jpeg", "image0/nos.jpeg", "image0/papa.jpeg",
-        "image0/popa.jpeg", "image0/rot.jpeg", "image0/sok.jpeg"
-    ],
+    "image0/popa.jpeg", "image0/rot.jpeg", "image0/sok.jpeg"
+],
     imag1 = ["image1/bik.jpeg", "image1/chees.jpeg", "image1/dom.jpeg", "image1/ejik.jpeg", "image1/juk.jpeg", "image1/kit.jpeg", "image1/kot.jpeg",
         "image1/luk.jpeg", "image1/rak.jpeg", "image1/ula.jpeg"
     ],
@@ -55,8 +55,8 @@ var imag0 = ["image0/gora.jpeg", "image0/kasha.jpeg", "image0/mama.jpeg", "image
     ],
     imam = imag1;
 var wava0 = ["sound0/gora.wav", "sound0/kasha.wav", "sound0/mama.wav", "sound0/masha.wav", "sound0/mir.wav", "sound0/nos.wav", "sound0/papa.wav",
-        "sound0/popa.wav", "sound0/rot.wav", "sound0/sok.wav"
-    ],
+    "sound0/popa.wav", "sound0/rot.wav", "sound0/sok.wav"
+],
 
     wava1 = ["sound1/bik.wav", "sound1/chees.wav", "sound1/dom.wav", "sound1/ejik.wav", "sound1/juk.wav", "sound1/kit.wav", "sound1/kot.wav",
         "sound1/luk.wav", "sound1/rak.wav", "sound1/ula.wav"
@@ -127,7 +127,7 @@ sm21.style.display = "none";
 sm22.style.display = "none";
 sm23.style.display = "none";
 
-smf = function() {
+smf = function () {
     sm11.style.display = "none";
     sm12.style.display = "none";
     sm13.style.display = "none";
@@ -137,7 +137,7 @@ smf = function() {
 }
 var mmas = [".", ".", ".", ".", ".", ".", ".", "."];
 var ir = 0;
-var clx = function() {
+var clx = function () {
     sm11.style.display = "none";
     sm12.style.display = "none";
     sm13.style.display = "none";
@@ -151,7 +151,7 @@ var clx = function() {
     }
     ir = 0;
 };
-var cly = function() {
+var cly = function () {
     for (let i = 0; i < 8; ++i) {
         y[i].style.display = "none";
         y[i].innerText = ".";
@@ -168,7 +168,7 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
 }
-var fun = function(par) {
+var fun = function (par) {
     let ss = "",
         tt = "";
     let sd = getRandomInt(1, 34);
@@ -177,20 +177,20 @@ var fun = function(par) {
     ss = ss + par[0];
     sd = getRandomInt(1, 34);
     ss = ss + alfa[sd];
-    if (typeof(par[1]) == "undefined") {} else { ss = ss + par[1]; }
-    if (typeof(par[2]) == "undefined") {} else { ss = ss + par[2]; }
-    if (typeof(par[3]) == "undefined") {} else { ss = ss + par[3]; }
-    if (typeof(par[4]) == "undefined") {} else { ss = ss + par[4]; }
-    if (typeof(par[5]) == "undefined") {} else { ss = ss + par[5]; }
-    if (typeof(par[6]) == "undefined") {} else { ss = ss + par[6]; }
-    if (typeof(par[7]) == "undefined") {} else { ss = ss + par[7]; }
+    if (typeof (par[1]) == "undefined") { } else { ss = ss + par[1]; }
+    if (typeof (par[2]) == "undefined") { } else { ss = ss + par[2]; }
+    if (typeof (par[3]) == "undefined") { } else { ss = ss + par[3]; }
+    if (typeof (par[4]) == "undefined") { } else { ss = ss + par[4]; }
+    if (typeof (par[5]) == "undefined") { } else { ss = ss + par[5]; }
+    if (typeof (par[6]) == "undefined") { } else { ss = ss + par[6]; }
+    if (typeof (par[7]) == "undefined") { } else { ss = ss + par[7]; }
     for (let i = 0; i < ss.length; ++i) { mm[i] = ss[i] };
     mm.sort();
     for (let i = 0; i < mm.length; ++i) { tt = tt + mm[i] };
     // alert(tt);
     return tt;
 };
-var fun1 = function() {
+var fun1 = function () {
     let der = fun(world);
     for (let i = 0; i < der.length; ++i) {
         y[i].style.display = "inline-block";
@@ -205,19 +205,19 @@ var fun1 = function() {
 
 var butt = document.getElementById('but1').innerText;
 
-var zvuk = function() {
+var zvuk = function () {
     document.getElementById('kukuku').src = zvobj[butt];
     document.getElementById('kukuku').load();
     document.getElementById('kukuku').play();
 };
-var pizz = function() {
+var pizz = function () {
     var bn = 0,
         mh = "";
     for (let i = 0; i < world.length; ++i) {
         mh = mh + x[i].innerText;
         if (x[i].innerText == ".") {
             bn = 1;
-        } else {};
+        } else { };
     }
     if (bn == 0) {
         smf();
@@ -386,7 +386,7 @@ function level3() {
     document.getElementById('myImg10').src = imag3[8];
     document.getElementById('myImg11').src = imag3[9];
 };
-var fun2 = function() {
+var fun2 = function () {
     var inn = setInterval(fram, 300),
         i = 0,
         pid = world.length;
@@ -403,7 +403,7 @@ var fun2 = function() {
         }
     }
 };
-var fun35 = function() {
+var fun35 = function () {
     var inn = setInterval(fram, 300),
         i = 0,
         pid = world.length;
@@ -420,7 +420,7 @@ var fun35 = function() {
         }
     }
 };
-var fun32 = function() {
+var fun32 = function () {
     var inn = setInterval(fram, 300),
         i = 0,
         pid = world.length;
