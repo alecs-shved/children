@@ -26,6 +26,25 @@ h2 {
     margin: 0;
 }
 
+
+  
+  .success {background-color: #4CAF50;} /* Green */
+  .success:hover {background-color: #46a049;}
+  
+  .info {background-color: #2196F3;} /* Blue */
+  .info:hover {background: #0b7dda;}
+  
+  .warning {background-color: #ff9800;} /* Orange */
+  .warning:hover {background: #e68a00;}
+  
+  .danger {background-color: #f44336;} /* Red */
+  .danger:hover {background: #da190b;}
+  
+  .default {background-color: #e7e7e7; color: black;} /* Gray */
+  .default:hover {background: #ddd;}
+
+
+
 .fufs {
     background: hsl(60, 10%, 94%);
 }
@@ -130,8 +149,8 @@ a:hover {
 .container {
     position: relative;
    /** text-align: center;*/
-    font-size: 20px;
-    color: rgb(34, 13, 5);
+    font-size: 31px;
+    color: rgb(91, 45, 199);
 }
 
 

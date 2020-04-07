@@ -1,3 +1,5 @@
+
+
 var alfavit = ["a.wav", "b.wav", "v.wav", "g.wav", "d.wav", "e.wav", "eee.wav", "j.wav", "z.wav", "i.wav", "iii.wav", "k.wav", "l.wav", "m.wav", "n.wav",
     "o.wav", "p.wav", "r.wav", "s.wav", "t.wav", "u.wav", "f.wav", "x.wav", "c.wav", "ch.wav", "sh.wav", "she.wav", "ii.wav", "mm.wav",
     "tt.wav", "ee.waf", "y.wav", "ya.wav"
