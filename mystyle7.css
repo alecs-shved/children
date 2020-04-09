@@ -48,7 +48,9 @@ h2 {
 .fufs {
     background: hsl(60, 10%, 94%);
 }
-
+.fufss {
+    background: hsl(60, 10%, 94%);
+}
 section {
     display: flex;
 }

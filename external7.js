@@ -104,6 +104,7 @@ document.getElementById('myImg9').src = imag1[7];
 document.getElementById('myImg10').src = imag1[8];
 document.getElementById('myImg11').src = imag1[9];
 
+
 var x = [],
     y = [];
 x[0] = document.getElementById("bu1");
