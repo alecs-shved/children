@@ -11,7 +11,13 @@ header {
     background: rgb(12, 141, 7);
     height: 100px;
 }
-
+p {
+    text-align: center;
+    font-size: 48px;
+    color: rgb(19, 22, 230);
+    line-height: 100px;
+    margin: 0;
+}
 h1 {
     text-align: center;
     color: white;

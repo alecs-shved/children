@@ -1,11 +1,10 @@
-//let ff = "shved";
-//console.log(ff);
 
-//function getRandomInt(min, max) {
-//  min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
-//}
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+   max = Math.floor(max);
+   return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+};
+
 //console.log(getRandomInt(1, 100));
 function alfavv() {
     location.href = "indexalfav.html";
@@ -16,9 +15,7 @@ function pishem() {
 function slogi() {
     location.href = "indexslogi.html";
 }
-function chit() {
-    location.href = "indexchit.html";
-}
+
 function schit() {
     location.href = "indexschit.html";
 }
@@ -44,6 +41,20 @@ var worldchit0 = ["ГОРА", "КАША", "МАМА", "МАША", "МИР", "Н�
     wormchit = worldchit1,
     worldchit = wormchit[0];
 
+    document.getElementById('worldchitt').innerText = worldchit;
+    document.getElementById('bbchit1').style.background = "red";
+
+var fgonchit = function(funn){return wormchit[funn] };
+
+function ddd3() {
+    document.getElementById('myImg1').style.display = "none";
+    document.getElementById('worldchitt').innerText = fgonchit(getRandomInt(0, 10));
+    clx();
+    worldchit = document.getElementById('worldchitt').innerText;
+    fun1();
+};
+
+
 var x = [];
 x[0] = document.getElementById("buchit1");
 x[1] = document.getElementById("buchit2");
@@ -54,7 +65,6 @@ x[5] = document.getElementById("buchit6");
 x[6] = document.getElementById("buchit7");
 x[7] = document.getElementById("buchit8");
 
-//document.getElementById('myImg1').src = imag1[0];
 document.getElementById('myImgchit2').src = imagchit1[0];
 document.getElementById('myImgchit3').src = imagchit1[1];
 document.getElementById('myImgchit4').src = imagchit1[2];
@@ -90,73 +100,44 @@ smchit21.style.display = "none";
 smchit22.style.display = "none";
 smchit23.style.display = "none";
 
-
-var fun = function (par) {
-    let ss = "",
-        tt = "";
-    let sd = getRandomInt(1, 34);
-    let mm = [];
-    ss = ss + alfa[sd];
-    ss = ss + par[0];
-    sd = getRandomInt(1, 34);
-    ss = ss + alfa[sd];
-    if (typeof (par[1]) == "undefined") { } else { ss = ss + par[1]; }
-    if (typeof (par[2]) == "undefined") { } else { ss = ss + par[2]; }
-    if (typeof (par[3]) == "undefined") { } else { ss = ss + par[3]; }
-    if (typeof (par[4]) == "undefined") { } else { ss = ss + par[4]; }
-    if (typeof (par[5]) == "undefined") { } else { ss = ss + par[5]; }
-    if (typeof (par[6]) == "undefined") { } else { ss = ss + par[6]; }
-    if (typeof (par[7]) == "undefined") { } else { ss = ss + par[7]; }
-    for (let i = 0; i < ss.length; ++i) { mm[i] = ss[i] };
-    mm.sort();
-    for (let i = 0; i < mm.length; ++i) { tt = tt + mm[i] };
-    // alert(tt);
-    return tt;
-};
-
 var fun1 = function () {
-    let der = fun(worldchit);
-    for (let i = 0; i < der.length; ++i) {
-        y[i].style.display = "inline-block";
-    }
-    for (let i = 0; i < der.length; ++i) {
-        y[i].innerText = der[i];
-    }
+    let der = worldchit;
     fun2();
-};
-//function myher111(par1, par2, ii) {
-//clx();
-//cly();
-// per = ii;
-// document.getElementById('myImgchit1').src = par1;
-// wa = wavm[ii];
-// world = worm[ii];
-// document.getElementById('audio1').src = par2;
-// clx();
-// cly();
-// fun1();
-//document.getElementById('audio1').load();
-// document.getElementById('audio1').play();
-//}
-
-function ddd3() {
-
+    for (let i = 0; i < der.length; ++i) {
+        x[i].innerText = der[i].toLowerCase();
+    }
 };
 
+function chit() {
+    location.href = "indexchit.html";
+    document.getElementById('worldchitt').innerText = fgonchit(getRandomInt(0, 10));
+   // clx();
+  //  wormchit = worldchit1;
+  //  worldchit = worldchit1[0];
+  //  fun1();
+  //  worldchit = document.getElementById('worldchitt').innerText;
+}
+function myher110(par1, ii) {
+   // clx();
+   document.getElementById('myImg1').style.display = "inline-block";
+    document.getElementById('myImg1').src = par1;
+    //document.getElementById('audio1').src = par2;
+   // fun1();
+    //document.getElementById('audio1').load();
+   // document.getElementById('audio1').play();
+}
 function levelchit1() {
+    document.getElementById('myImg1').style.display = "none";
     document.getElementById('bbchit0').style.background = "#4CAF50";
     document.getElementById('bbchit1').style.background = "red";
     document.getElementById('bbchit2').style.background = "#4CAF50";
     document.getElementById('bbchit3').style.background = "#4CAF50";
     clx();
-    //  worm = world1;
-    //  world = worm[0];
-    // imam = imag1;
-    // wavm = wava1;
-    //  per = 0;
-    // cly();
-    // fun1();
-    //  document.getElementById('myImg1').src = imag1[0];
+    imamchit = imagchit1;
+    wormchit = worldchit1;
+    worldchit = worldchit1[0];
+    fun1();
+    document.getElementById('worldchitt').innerText = worldchit;
     document.getElementById('myImgchit2').src = imagchit1[0];
     document.getElementById('myImgchit3').src = imagchit1[1];
     document.getElementById('myImgchit4').src = imagchit1[2];
@@ -169,19 +150,17 @@ function levelchit1() {
     document.getElementById('myImgchit11').src = imagchit1[9];
 };
 function levelchit0() {
+    document.getElementById('myImg1').style.display = "none";
     document.getElementById('bbchit0').style.background = "red";
     document.getElementById('bbchit1').style.background = "#4CAF50";
     document.getElementById('bbchit2').style.background = "#4CAF50";
     document.getElementById('bbchit3').style.background = "#4CAF50";
     clx();
-    //  worm = world1;
-    //  world = worm[0];
-    // imam = imag1;
-    // wavm = wava1;
-    //  per = 0;
-    // cly();
-    // fun1();
-    //  document.getElementById('myImg1').src = imag1[0];
+    imamchit = imagchit0;
+    wormchit = worldchit0;
+    worldchit = worldchit0[0];
+    fun1();
+    document.getElementById('worldchitt').innerText = worldchit;
     document.getElementById('myImgchit2').src = imagchit0[0];
     document.getElementById('myImgchit3').src = imagchit0[1];
     document.getElementById('myImgchit4').src = imagchit0[2];
@@ -194,19 +173,17 @@ function levelchit0() {
     document.getElementById('myImgchit11').src = imagchit0[9];
 };
 function levelchit2() {
+    document.getElementById('myImg1').style.display = "none";
     document.getElementById('bbchit0').style.background = "#4CAF50";
     document.getElementById('bbchit1').style.background = "#4CAF50";
     document.getElementById('bbchit2').style.background = "red";
     document.getElementById('bbchit3').style.background = "#4CAF50";
     clx();
-    //  worm = world1;
-    //  world = worm[0];
-    // imam = imag1;
-    // wavm = wava1;
-    //  per = 0;
-    // cly();
-    // fun1();
-    //  document.getElementById('myImg1').src = imag1[0];
+    imamchit = imagchit2;
+    wormchit = worldchit2;
+    worldchit = worldchit2[0];
+    fun1();
+    document.getElementById('worldchitt').innerText = worldchit;
     document.getElementById('myImgchit2').src = imagchit2[0];
     document.getElementById('myImgchit3').src = imagchit2[1];
     document.getElementById('myImgchit4').src = imagchit2[2];
@@ -219,19 +196,17 @@ function levelchit2() {
     document.getElementById('myImgchit11').src = imagchit2[9];
 };
 function levelchit3() {
+    document.getElementById('myImg1').style.display = "none";
     document.getElementById('bbchit0').style.background = "#4CAF50";
     document.getElementById('bbchit1').style.background = "#4CAF50";
     document.getElementById('bbchit2').style.background = "#4CAF50";
     document.getElementById('bbchit3').style.background = "red";
     clx();
-    //  worm = world1;
-    //  world = worm[0];
-    // imam = imag1;
-    // wavm = wava1;
-    //  per = 0;
-    // cly();
-    // fun1();
-    //  document.getElementById('myImg1').src = imag1[0];
+    imamchit = imagchit3;
+    wormchit = worldchit3;
+    worldchit = worldchit3[0];
+    fun1();
+    document.getElementById('worldchitt').innerText = worldchit;
     document.getElementById('myImgchit2').src = imagchit3[0];
     document.getElementById('myImgchit3').src = imagchit3[1];
     document.getElementById('myImgchit4').src = imagchit3[2];
@@ -260,6 +235,7 @@ var fun2 = function () {
         }
     }
 };
+
 var fun35 = function () {
     var inn = setInterval(fram, 300),
         i = 0,
