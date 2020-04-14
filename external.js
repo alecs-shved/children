@@ -123,7 +123,7 @@ function myher110(par1, par2, ii) {
    document.getElementById('myImg1').style.display = "inline-block";
     document.getElementById('myImg1').src = par1;
    
-    if (par2 == worldchit) {document.getElementById('worldchitt').innerText = "Молодец"} else {document.getElementById('worldchitt').innerText = "Пенек"};
+    if (par2 == worldchit) {document.getElementById('worldchitt').innerText = "Молодец, умничка, так держать!"} else {document.getElementById('worldchitt').innerText = "Ой, ой, ой! Надо ещё подумать!"};
     //document.getElementById('audio1').src = par2;
    // fun1();
     //document.getElementById('audio1').load();
