@@ -1,11 +1,10 @@
 
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-   max = Math.floor(max);
-   return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
 };
 
-//console.log(getRandomInt(1, 100));
 function alfavv() {
     location.href = "indexalfav.html";
 }
@@ -19,7 +18,20 @@ function slogi() {
 function schit() {
     location.href = "indexschit.html";
 }
+var wava0 = ["sound0/gora.wav", "sound0/kasha.wav", "sound0/mama.wav", "sound0/masha.wav", "sound0/mir.wav", "sound0/nos.wav", "sound0/papa.wav",
+    "sound0/popa.wav", "sound0/rot.wav", "sound0/sok.wav"
+],
 
+    wava1 = ["sound1/bik.wav", "sound1/chees.wav", "sound1/dom.wav", "sound1/ejik.wav", "sound1/juk.wav", "sound1/kit.wav", "sound1/kot.wav",
+        "sound1/luk.wav", "sound1/rak.wav", "sound1/ula.wav"
+    ],
+    wava2 = ["sound2/chasi.wav", "sound2/chuka.wav", "sound2/lisa.wav", "sound2/morj.wav", "sound2/pauk.wav", "sound2/slon.wav", "sound2/sova.wav",
+        "sound2/tort.wav", "sound2/yaico.wav", "sound2/ytka.wav"
+    ],
+    wava3 = ["sound3/belka.wav", "sound3/doctor.wav", "sound3/fixk.wav", "sound3/induk.wav", "sound3/mishka.wav", "sound3/pavlin.wav", "sound3/petuh.wav",
+        "sound3/simka.wav", "sound3/sobaka.wav", "sound3/zebra.wav"
+    ],
+    wavm = wava1;
 var imagchit0 = ["image0/gora.jpeg", "image0/kasha.jpeg", "image0/mama.jpeg", "image0/masha.jpeg", "image0/mir.jpeg", "image0/nos.jpeg", "image0/papa.jpeg",
     "image0/popa.jpeg", "image0/rot.jpeg", "image0/sok.jpeg"
 ],
@@ -41,11 +53,10 @@ var worldchit0 = ["ГОРА", "КАША", "МАМА", "МАША", "МИР", "Н�
     wormchit = worldchit1,
     worldchit = wormchit[0];
 
-   // document.getElementById('worldchitt').innerText = worldchit;
-    document.getElementById('bbchit1').style.background = "red";
-    document.getElementById('myImg1').style.display = "none";
+document.getElementById('bbchit1').style.background = "red";
+document.getElementById('myImg1').style.display = "none";
 
-var fgonchit = function(funn){return wormchit[funn] };
+var fgonchit = function (funn) { return wormchit[funn] };
 
 function ddd3() {
     document.getElementById('myImg1').style.display = "none";
@@ -85,6 +96,14 @@ var clx = function () {
 };
 
 clx();
+var smm5 = [];
+smm5[0] = document.getElementById("smchit11");
+smm5[1] = document.getElementById("smchit12");
+smm5[2] = document.getElementById("smchit13");
+var smm2 = [];
+smm2[0] = document.getElementById("smchit21");
+smm2[1] = document.getElementById("smchit22");
+smm2[2] = document.getElementById("smchit23");
 
 var smchit11 = document.getElementById("smchit11");
 var smchit12 = document.getElementById("smchit12");
@@ -112,22 +131,21 @@ var fun1 = function () {
 function chit() {
     location.href = "indexchit.html";
     document.getElementById('worldchitt').innerText = fgonchit(getRandomInt(0, 10));
-   // clx();
-  //  wormchit = worldchit1;
-  //  worldchit = worldchit1[0];
-  //  fun1();
-  //  worldchit = document.getElementById('worldchitt').innerText;
 }
 function myher110(par1, par2, ii) {
-   // clx();
-   document.getElementById('myImg1').style.display = "inline-block";
+    document.getElementById('myImg1').style.display = "inline-block";
     document.getElementById('myImg1').src = par1;
-   
-    if (par2 == worldchit) {document.getElementById('worldchitt').innerText = "Молодец, умничка, так держать!"} else {document.getElementById('worldchitt').innerText = "Ой, ой, ой! Надо ещё подумать!"};
-    //document.getElementById('audio1').src = par2;
-   // fun1();
-    //document.getElementById('audio1').load();
-   // document.getElementById('audio1').play();
+
+    if (par2 == worldchit) {
+        fun35(); document.getElementById('kk').src = "sound/oc5.wav";
+        document.getElementById('kk').load();
+        document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Молодец, умничка, так держать!"
+    }
+    else {
+        fun32(); document.getElementById('kk').src = "sound/oc2.wav";
+        document.getElementById('kk').load();
+        document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Ой, ой, ой! Надо ещё подумать!"
+    };
 }
 function levelchit1() {
     document.getElementById('myImg1').style.display = "none";
@@ -287,7 +305,3 @@ function alf() {
         }
     };
 }
-
-//function alfi() {
- //   document.getElementById("myImg2").addEventListener("click", myher11);
-//}
