@@ -41,8 +41,9 @@ var worldchit0 = ["ГОРА", "КАША", "МАМА", "МАША", "МИР", "Н�
     wormchit = worldchit1,
     worldchit = wormchit[0];
 
-    document.getElementById('worldchitt').innerText = worldchit;
+   // document.getElementById('worldchitt').innerText = worldchit;
     document.getElementById('bbchit1').style.background = "red";
+    document.getElementById('myImg1').style.display = "none";
 
 var fgonchit = function(funn){return wormchit[funn] };
 
@@ -117,10 +118,12 @@ function chit() {
   //  fun1();
   //  worldchit = document.getElementById('worldchitt').innerText;
 }
-function myher110(par1, ii) {
+function myher110(par1, par2, ii) {
    // clx();
    document.getElementById('myImg1').style.display = "inline-block";
     document.getElementById('myImg1').src = par1;
+   
+    if (par2 == worldchit) {document.getElementById('worldchitt').innerText = "Молодец"} else {document.getElementById('worldchitt').innerText = "Пенек"};
     //document.getElementById('audio1').src = par2;
    // fun1();
     //document.getElementById('audio1').load();
