@@ -88,14 +88,7 @@ document.getElementById('myImgchit9').src = imagchit1[7];
 document.getElementById('myImgchit10').src = imagchit1[8];
 document.getElementById('myImgchit11').src = imagchit1[9];
 
-var clx = function () {
-    for (let i = 0; i < 8; ++i) {
-        x[i].style.display = "none";
-        x[i].innerText = ".";
-    }
-};
 
-clx();
 var smm5 = [];
 smm5[0] = document.getElementById("smchit11");
 smm5[1] = document.getElementById("smchit12");
@@ -120,6 +113,20 @@ smchit21.style.display = "none";
 smchit22.style.display = "none";
 smchit23.style.display = "none";
 
+var clx = function () {
+    smm5[0].style.display = "none";
+    smm5[1].style.display = "none";
+    smm5[2].style.display = "none";
+    smm2[0].style.display = "none";
+    smm2[1].style.display = "none";
+    smm2[2].style.display = "none";
+    for (let i = 0; i < 8; ++i) {
+        x[i].style.display = "none";
+        x[i].innerText = ".";
+    }
+};
+
+clx();
 var fun1 = function () {
     let der = worldchit;
     fun2();
@@ -133,6 +140,12 @@ function chit() {
     document.getElementById('worldchitt').innerText = fgonchit(getRandomInt(0, 10));
 }
 function myher110(par1, par2, ii) {
+    smm5[0].style.display = "none";
+    smm5[1].style.display = "none";
+    smm5[2].style.display = "none";
+    smm2[0].style.display = "none";
+    smm2[1].style.display = "none";
+    smm2[2].style.display = "none";
     document.getElementById('myImg1').style.display = "inline-block";
     document.getElementById('myImg1').src = par1;
 
