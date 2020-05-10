@@ -1,4 +1,44 @@
 
+
+ document.getElementById('id121222').style.display = "none";
+function startRecognizer(){
+    var tecct = "";
+    if ('webkitSpeechRecognition' in window) {
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = 'ru';
+
+      recognition.onresult = function (event) {
+        var result = event.results[event.resultIndex];
+         // console.clear();
+         // console.log(result[0].transcript);
+          tecct = result[0].transcript;
+          document.getElementById('id121222').value = tecct;
+      };
+  
+      recognition.onend = function() {
+        
+        var pr = worldchit;
+        document.getElementById('id121222').style.display = "inline-block";
+        document.getElementById('myImg1').style.display = "inline-block";
+        if (pr == "БЫК") {document.getElementById('myImg1').src = "image1/bik.jpeg";}
+        if (pr == "СЫР") {document.getElementById('myImg1').src = "image1/chees.jpeg";}
+        if (pr == "ДОМ") {document.getElementById('myImg1').src = "image1/dom.jpeg";}
+        if (pr == "ЕЖ")  {document.getElementById('myImg1').src = "image1/ejik.jpeg";}
+        if (pr == "ЖУК") {document.getElementById('myImg1').src = "image1/juk.jpeg";}
+        if (pr == "КИТ") {document.getElementById('myImg1').src = "image1/kit.jpeg";}
+        if (pr == "КОТ") {document.getElementById('myImg1').src = "image1/kot.jpeg";}
+        if (pr == "ЛУК") {document.getElementById('myImg1').src = "image1/luk.jpeg";}
+        if (pr == "РАК") {document.getElementById('myImg1').src = "image1/rak.jpeg";}
+        if (pr == "ЮЛА") {document.getElementById('myImg1').src = "image1/ula.jpeg";}
+        console.log('Распознавание завершилось.', pr);
+      };
+
+      recognition.start();
+
+
+    } else console.log('webkitSpeechRecognition не поддерживается :(')
+  };
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -64,6 +104,8 @@ function ddd3() {
     clx();
     worldchit = document.getElementById('worldchitt').innerText;
     fun1();
+    document.getElementById('id121222').style.display = "none";
+    startRecognizer();
 };
 
 
@@ -149,17 +191,19 @@ function myher110(par1, par2, ii) {
     document.getElementById('myImg1').style.display = "inline-block";
     document.getElementById('myImg1').src = par1;
 
-    if (par2 == worldchit) {
-        fun35(); document.getElementById('kk').src = "sound/oc5.wav";
-        document.getElementById('kk').load();
-        document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Молодец, умничка, так держать!"
-    }
-    else {
-        fun32(); document.getElementById('kk').src = "sound/oc2.wav";
-        document.getElementById('kk').load();
-        document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Ой, ой, ой! Надо ещё подумать!"
-    };
+   // if (par2 == worldchit) {
+      //  fun35(); document.getElementById('kk').src = "sound/oc5.wav";
+      //  document.getElementById('kk').load();
+      //  document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Молодец, умничка, так держать!"
+   // }
+   // else {
+       // fun32(); document.getElementById('kk').src = "sound/oc2.wav";
+       // document.getElementById('kk').load();
+       // document.getElementById('kk').play(); document.getElementById('worldchitt').innerText = "Ой, ой, ой! Надо ещё подумать!"
+   // };
+  //  startRecognizer();
 }
+
 function levelchit1() {
     document.getElementById('myImg1').style.display = "none";
     document.getElementById('bbchit0').style.background = "#4CAF50";
