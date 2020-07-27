@@ -1,25 +1,88 @@
 function alfavv() {
-location.href = "indexalfav.html";
-} 
+    location.href = "indexalfav.html";
+}
 function pishem() {
     location.href = "index.html";
-    } 
-    function slogi() {
-        location.href = "indexslogi.html";
-        } 
-        function chit() {
-            location.href = "indexchit.html";
-            } 
-            function schit() {
-                location.href = "indexschit.html";
-                } 
-    
-var alfavit = ["a.wav", "b.wav", "v.wav", "g.wav", "d.wav", "e.wav", "eee.wav", "j.wav", "z.wav", "i.wav", "iii.wav", "k.wav", "l.wav", "m.wav", "n.wav",
-    "o.wav", "p.wav", "r.wav", "s.wav", "t.wav", "u.wav", "f.wav", "x.wav", "c.wav", "ch.wav", "sh.wav", "she.wav", "ii.wav", "mm.wav",
-    "tt.wav", "ee.waf", "y.wav", "ya.wav"
+}
+function slogi() {
+    location.href = "indexslogi.html";
+}
+function chit() {
+    location.href = "indexchit.html";
+}
+function schit() {
+    location.href = "indexschit.html";
+}
+
+var alfavit = [
+    "a.wav",
+    "b.wav",
+    "v.wav",
+    "g.wav",
+    "d.wav",
+    "e.wav",
+    "eee.wav",
+    "j.wav",
+    "z.wav",
+    "i.wav",
+    "iii.wav",
+    "k.wav",
+    "l.wav",
+    "m.wav",
+    "n.wav",
+    "o.wav",
+    "p.wav",
+    "r.wav",
+    "s.wav",
+    "t.wav",
+    "u.wav",
+    "f.wav",
+    "x.wav",
+    "c.wav",
+    "ch.wav",
+    "sh.wav",
+    "she.wav",
+    "ii.wav",
+    "mm.wav",
+    "tt.wav",
+    "ee.waf",
+    "y.wav",
+    "ya.wav"
 ];
-var alfa = ["А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т",
-    "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ы", "Ь", "Ъ", "Э", "Ю", "Я"
+var alfa = [
+    "А",
+    "Б",
+    "В",
+    "Г",
+    "Д",
+    "Е",
+    "Ё",
+    "Ж",
+    "З",
+    "И",
+    "Й",
+    "К",
+    "Л",
+    "М",
+    "Н",
+    "О",
+    "П",
+    "Р",
+    "С",
+    "Т",
+    "У",
+    "Ф",
+    "Х",
+    "Ц",
+    "Ч",
+    "Ш",
+    "Щ",
+    "Ы",
+    "Ь",
+    "Ъ",
+    "Э",
+    "Ю",
+    "Я"
 ];
 var zvobj = {
     А: "alfav/a.wav",
@@ -57,37 +120,153 @@ var zvobj = {
     Я: "alfav/ya.wav"
 };
 
-var imag0 = ["image0/gora.jpeg", "image0/kasha.jpeg", "image0/mama.jpeg", "image0/masha.jpeg", "image0/mir.jpeg", "image0/nos.jpeg", "image0/papa.jpeg",
-    "image0/popa.jpeg", "image0/rot.jpeg", "image0/sok.jpeg"
-],
-    imag1 = ["image1/bik.jpeg", "image1/chees.jpeg", "image1/dom.jpeg", "image1/ejik.jpeg", "image1/juk.jpeg", "image1/kit.jpeg", "image1/kot.jpeg",
-        "image1/luk.jpeg", "image1/rak.jpeg", "image1/ula.jpeg"
+var imag0 = [
+        "image0/gora.jpeg",
+        "image0/kasha.jpeg",
+        "image0/mama.jpeg",
+        "image0/masha.jpeg",
+        "image0/mir.jpeg",
+        "image0/nos.jpeg",
+        "image0/papa.jpeg",
+        "image0/popa.jpeg",
+        "image0/rot.jpeg",
+        "image0/sok.jpeg"
     ],
-    imag2 = ["image2/chasi.jpeg", "image2/chuka.jpeg", "image2/lisa.jpeg", "image2/morj.jpeg", "image2/pauk.jpeg", "image2/slon.jpeg", "image2/sova.jpeg",
-        "image2/tort.jpeg", "image2/yaico.jpeg", "image2/ytka.jpeg"
+    imag1 = [
+        "image1/bik.jpeg",
+        "image1/chees.jpeg",
+        "image1/dom.jpeg",
+        "image1/ejik.jpeg",
+        "image1/juk.jpeg",
+        "image1/kit.jpeg",
+        "image1/kot.jpeg",
+        "image1/luk.jpeg",
+        "image1/rak.jpeg",
+        "image1/ula.jpeg"
     ],
-    imag3 = ["image3/belka.jpeg", "image3/doctor.jpeg", "image3/fixk.jpeg", "image3/induk.jpeg", "image3/mishka.jpeg", "image3/pavlin.jpeg", "image3/petuh.jpeg",
-        "image3/simka.png", "image3/sobaka.jpeg", "image3/zebra.jpeg"
+    imag2 = [
+        "image2/chasi.jpeg",
+        "image2/chuka.jpeg",
+        "image2/lisa.jpeg",
+        "image2/morj.jpeg",
+        "image2/pauk.jpeg",
+        "image2/slon.jpeg",
+        "image2/sova.jpeg",
+        "image2/tort.jpeg",
+        "image2/yaico.jpeg",
+        "image2/ytka.jpeg"
+    ],
+    imag3 = [
+        "image3/belka.jpeg",
+        "image3/doctor.jpeg",
+        "image3/fixk.jpeg",
+        "image3/induk.jpeg",
+        "image3/mishka.jpeg",
+        "image3/pavlin.jpeg",
+        "image3/petuh.jpeg",
+        "image3/simka.png",
+        "image3/sobaka.jpeg",
+        "image3/zebra.jpeg"
     ],
     imam = imag1;
-var wava0 = ["sound0/gora.wav", "sound0/kasha.wav", "sound0/mama.wav", "sound0/masha.wav", "sound0/mir.wav", "sound0/nos.wav", "sound0/papa.wav",
-    "sound0/popa.wav", "sound0/rot.wav", "sound0/sok.wav"
-],
+var wava0 = [
+        "sound0/gora.wav",
+        "sound0/kasha.wav",
+        "sound0/mama.wav",
+        "sound0/masha.wav",
+        "sound0/mir.wav",
+        "sound0/nos.wav",
+        "sound0/papa.wav",
+        "sound0/popa.wav",
+        "sound0/rot.wav",
+        "sound0/sok.wav"
+    ],
 
-    wava1 = ["sound1/bik.wav", "sound1/chees.wav", "sound1/dom.wav", "sound1/ejik.wav", "sound1/juk.wav", "sound1/kit.wav", "sound1/kot.wav",
-        "sound1/luk.wav", "sound1/rak.wav", "sound1/ula.wav"
+    wava1 = [
+        "sound1/bik.wav",
+        "sound1/chees.wav",
+        "sound1/dom.wav",
+        "sound1/ejik.wav",
+        "sound1/juk.wav",
+        "sound1/kit.wav",
+        "sound1/kot.wav",
+        "sound1/luk.wav",
+        "sound1/rak.wav",
+        "sound1/ula.wav"
     ],
-    wava2 = ["sound2/chasi.wav", "sound2/chuka.wav", "sound2/lisa.wav", "sound2/morj.wav", "sound2/pauk.wav", "sound2/slon.wav", "sound2/sova.wav",
-        "sound2/tort.wav", "sound2/yaico.wav", "sound2/ytka.wav"
+    wava2 = [
+        "sound2/chasi.wav",
+        "sound2/chuka.wav",
+        "sound2/lisa.wav",
+        "sound2/morj.wav",
+        "sound2/pauk.wav",
+        "sound2/slon.wav",
+        "sound2/sova.wav",
+        "sound2/tort.wav",
+        "sound2/yaico.wav",
+        "sound2/ytka.wav"
     ],
-    wava3 = ["sound3/belka.wav", "sound3/doctor.wav", "sound3/fixk.wav", "sound3/induk.wav", "sound3/mishka.wav", "sound3/pavlin.wav", "sound3/petuh.wav",
-        "sound3/simka.wav", "sound3/sobaka.wav", "sound3/zebra.wav"
+    wava3 = [
+        "sound3/belka.wav",
+        "sound3/doctor.wav",
+        "sound3/fixk.wav",
+        "sound3/induk.wav",
+        "sound3/mishka.wav",
+        "sound3/pavlin.wav",
+        "sound3/petuh.wav",
+        "sound3/simka.wav",
+        "sound3/sobaka.wav",
+        "sound3/zebra.wav"
     ],
     wavm = wava1;
-var world0 = ["ГОРА", "КАША", "МАМА", "МАША", "МИР", "НОС", "ПАПА", "ПОПА", "РОТ", "СОК"],
-    world1 = ["БЫК", "СЫР", "ДОМ", "ЁЖ", "ЖУК", "КИТ", "КОТ", "ЛУК", "РАК", "ЮЛА"],
-    world2 = ["ЧАСЫ", "ЩУКА", "ЛИСА", "МОРЖ", "ПАУК", "СЛОН", "СОВА", "ТОРТ", "ЯЙЦО", "УТКА"],
-    world3 = ["БЕЛКА", "ДОКТОР", "ФИКСИК", "ИНДЮК", "МИШКА", "ПАВЛИН", "ПЕТУХ", "СИМКА", "СОБАКА", "ЗЕБРА"],
+var world0 = [
+        "ГОРА",
+        "КАША",
+        "МАМА",
+        "МАША",
+        "МИР",
+        "НОС",
+        "ПАПА",
+        "ПОПА",
+        "РОТ",
+        "СОК"
+    ],
+    world1 = [
+        "БЫК",
+        "СЫР",
+        "ДОМ",
+        "ЁЖ",
+        "ЖУК",
+        "КИТ",
+        "КОТ",
+        "ЛУК",
+        "РАК",
+        "ЮЛА"
+    ],
+    world2 = [
+        "ЧАСЫ",
+        "ЩУКА",
+        "ЛИСА",
+        "МОРЖ",
+        "ПАУК",
+        "СЛОН",
+        "СОВА",
+        "ТОРТ",
+        "ЯЙЦО",
+        "УТКА"
+    ],
+    world3 = [
+        "БЕЛКА",
+        "ДОКТОР",
+        "ФИКСИК",
+        "ИНДЮК",
+        "МИШКА",
+        "ПАВЛИН",
+        "ПЕТУХ",
+        "СИМКА",
+        "СОБАКА",
+        "ЗЕБРА"
+    ],
     worm = world1,
     world = worm[0];
 
@@ -152,7 +331,16 @@ smf = function () {
     sm22.style.display = "none";
     sm23.style.display = "none";
 }
-var mmas = [".", ".", ".", ".", ".", ".", ".", "."];
+var mmas = [
+    ".",
+    ".",
+    ".",
+    ".",
+    ".",
+    ".",
+    ".",
+    "."
+];
 var ir = 0;
 var clx = function () {
     sm11.style.display = "none";
@@ -161,7 +349,7 @@ var clx = function () {
     sm21.style.display = "none";
     sm22.style.display = "none";
     sm23.style.display = "none";
-    for (let i = 0; i < 8; ++i) {
+    for (let i = 0; i < 8; ++ i) {
         x[i].style.display = "none";
         x[i].innerText = ".";
         mmas[i] = ".";
@@ -169,7 +357,7 @@ var clx = function () {
     ir = 0;
 };
 var cly = function () {
-    for (let i = 0; i < 8; ++i) {
+    for (let i = 0; i < 8; ++ i) {
         y[i].style.display = "none";
         y[i].innerText = ".";
         mmas[i] = ".";
@@ -183,7 +371,7 @@ cly();
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+    return Math.floor(Math.random() * (max - min)) + min; // Максимум не включается, минимум включается
 }
 var fun = function (par) {
     let ss = "",
@@ -194,30 +382,47 @@ var fun = function (par) {
     ss = ss + par[0];
     sd = getRandomInt(1, 34);
     ss = ss + alfa[sd];
-    if (typeof (par[1]) == "undefined") { } else { ss = ss + par[1]; }
-    if (typeof (par[2]) == "undefined") { } else { ss = ss + par[2]; }
-    if (typeof (par[3]) == "undefined") { } else { ss = ss + par[3]; }
-    if (typeof (par[4]) == "undefined") { } else { ss = ss + par[4]; }
-    if (typeof (par[5]) == "undefined") { } else { ss = ss + par[5]; }
-    if (typeof (par[6]) == "undefined") { } else { ss = ss + par[6]; }
-    if (typeof (par[7]) == "undefined") { } else { ss = ss + par[7]; }
-    for (let i = 0; i < ss.length; ++i) { mm[i] = ss[i] };
+    if (typeof(par[1]) == "undefined") {} else {
+        ss = ss + par[1];
+    }
+    if (typeof(par[2]) == "undefined") {} else {
+        ss = ss + par[2];
+    }
+    if (typeof(par[3]) == "undefined") {} else {
+        ss = ss + par[3];
+    }
+    if (typeof(par[4]) == "undefined") {} else {
+        ss = ss + par[4];
+    }
+    if (typeof(par[5]) == "undefined") {} else {
+        ss = ss + par[5];
+    }
+    if (typeof(par[6]) == "undefined") {} else {
+        ss = ss + par[6];
+    }
+    if (typeof(par[7]) == "undefined") {} else {
+        ss = ss + par[7];
+    }
+    for (let i = 0; i < ss.length; ++ i) {
+        mm[i] = ss[i]
+    };
     mm.sort();
-    for (let i = 0; i < mm.length; ++i) { tt = tt + mm[i] };
+    for (let i = 0; i < mm.length; ++ i) {
+        tt = tt + mm[i]
+    };
     // alert(tt);
     return tt;
 };
 var fun1 = function () {
     let der = fun(world);
-    for (let i = 0; i < der.length; ++i) {
+    for (let i = 0; i < der.length; ++ i) {
         y[i].style.display = "inline-block";
     }
-    for (let i = 0; i < der.length; ++i) {
+    for (let i = 0; i < der.length; ++ i) {
         y[i].innerText = der[i];
     }
     fun2();
 };
-
 
 
 var butt = document.getElementById('but1').innerText;
@@ -230,11 +435,11 @@ var zvuk = function () {
 var pizz = function () {
     var bn = 0,
         mh = "";
-    for (let i = 0; i < world.length; ++i) {
+    for (let i = 0; i < world.length; ++ i) {
         mh = mh + x[i].innerText;
         if (x[i].innerText == ".") {
             bn = 1;
-        } else { };
+        } else {};
     }
     if (bn == 0) {
         smf();
@@ -259,7 +464,7 @@ function myr1(drek) {
         x[ir].innerText = document.getElementById(drek).innerText;
         mmas[ir] = "w";
         ji = 1;
-        ++ir;
+        ++ ir;
     }
     pizz();
     zvuk();
@@ -416,7 +621,7 @@ var fun2 = function () {
             document.getElementById('qqww').src = "sound/drip.ogg";
             document.getElementById('qqww').load();
             document.getElementById('qqww').play();
-            ++i
+            ++ i
         }
     }
 };
@@ -429,11 +634,13 @@ var fun35 = function () {
         if (i == pid) {
             clearInterval();
         } else {
-            if (i < 3) { smm5[i].style.display = "inline-block" };
+            if (i < 3) {
+                smm5[i].style.display = "inline-block"
+            };
             document.getElementById('qqww').src = "sound/drip.ogg";
             document.getElementById('qqww').load();
             document.getElementById('qqww').play();
-            ++i
+            ++ i
         }
     }
 };
@@ -446,11 +653,13 @@ var fun32 = function () {
         if (i == pid) {
             clearInterval();
         } else {
-            if (i < 3) { smm2[i].style.display = "inline-block" };
+            if (i < 3) {
+                smm2[i].style.display = "inline-block"
+            };
             document.getElementById('qqww').src = "sound/drip.ogg";
             document.getElementById('qqww').load();
             document.getElementById('qqww').play();
-            ++i
+            ++ i
         }
     }
 };
@@ -460,11 +669,13 @@ function alf() {
         i = 0;
 
     function fram() {
-        if (i == alfavit.length) { clearInterval(add); } else {
+        if (i == alfavit.length) {
+            clearInterval(add);
+        } else {
             document.getElementById('ppp').src = "alfav/" + alfavit[i];
             document.getElementById('ppp').load();
             document.getElementById('ppp').play();
-            ++i
+            ++ i
         }
     };
 }
@@ -472,3 +683,4 @@ function alf() {
 function alfi() {
     document.getElementById("myImg2").addEventListener("click", myher11);
 }
+// i am stamp vety big!
