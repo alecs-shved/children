@@ -1,0 +1,387 @@
+create database "mybaza1.fdb" user 'SYSDBA' password 'masterkey'
+
+connect "mybaza1.fdb" user 'SYSDBA' password 'masterkey';
+
+
+create table postav(nn integer not null primary key, namepos varchar(20), gorod varchar(20));
+
+insert into postav(nn, namepos, gorod) values(1, 'JON', 'MOSCOW');
+insert into postav(nn, namepos, gorod) values(2, 'GARI', 'PITER');
+insert into postav(nn, namepos, gorod) values(3, 'SON', 'TOKIO');
+insert into postav(nn, namepos, gorod) values(4, 'VANY', 'ROSTOV');
+insert into postav(nn, namepos, gorod) values(5, 'KOLY', 'BATAYSK');
+
+create table pokup(nn integer not null primary key, namepok varchar(20), gorod varchar(20));
+
+create table Employee(Id integer not null primary key, Salary integer);
+
+insert into Employee(Id,Salary) values(1,100);
+insert into Employee(Id,Salary) values(2,200);
+insert into Employee(Id,Salary) values(3,300);
+
+
+SELECT IFNULL((SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1), NULL) AS SecondHighestSalary
+SELECT (SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET 1) AS SecondHighestSalary;
+
+insert into pokup(nn, namepok, gorod) values(1, 'SELVER', 'MOSCOW');
+insert into pokup(nn, namepok, gorod) values(2, 'MUDER', 'PITER');
+insert into pokup(nn, namepok, gorod) values(3, 'HRENER', 'TOKIO');
+insert into pokup(nn, namepok, gorod) values(4, 'VALER', 'ROSTOV');
+insert into pokup(nn, namepok, gorod) values(5, 'SHPALER', 'BATAYSK');
+
+SQL> select * from postav right join  pokup   on  postav.gorod = pokup.gorod;
+
+          NN NAMEPOS              GOROD                          NN NAMEPOK              GOROD                
+============ ==================== ==================== ============ ==================== ==================== 
+           1 JON                  MOSCOW                          1 SELVER               MOSCOW               
+           2 GARI                 PITER                           2 MUDER                PITER                
+           3 SON                  TOKIO                           3 HRENER               TOKIO                
+           4 VANY                 ROSTOV                          4 VALER                ROSTOV               
+           5 KOLY                 BATAYSK                         5 SHPALER              BATAYSK              
+
+SQL> select * from postav left join  pokup   on  postav.gorod = pokup.gorod;
+
+          NN NAMEPOS              GOROD                          NN NAMEPOK              GOROD                
+============ ==================== ==================== ============ ==================== ==================== 
+           1 JON                  MOSCOW                          1 SELVER               MOSCOW               
+           2 GARI                 PITER                           2 MUDER                PITER                
+           3 SON                  TOKIO                           3 HRENER               TOKIO                
+           4 VANY                 ROSTOV                          4 VALER                ROSTOV               
+           5 KOLY                 BATAYSK                         5 SHPALER              BATAYSK      
+
+SQL> select * from postav,pokup where postav.gorod = pokup.gorod;
+
+          NN NAMEPOS              GOROD                          NN NAMEPOK              GOROD                
+============ ==================== ==================== ============ ==================== ==================== 
+           1 JON                  MOSCOW                          1 SELVER               MOSCOW               
+           2 GARI                 PITER                           2 MUDER                PITER                
+           3 SON                  TOKIO                           3 HRENER               TOKIO                
+           4 VANY                 ROSTOV                          4 VALER                ROSTOV               
+           5 KOLY                 BATAYSK                         5 SHPALER              BATAYSK              
+
+
+
+create table tovary(name nametov varchar(20), cena integer, koltov numeric, datgod date);
+
+
+insert into tovary(nn,nametov,cena,koltov,datgod) values(1,'sir',1000,20,'2.7.2023');
+
+insert into tovary(nn,nametov,cena,koltov,datgod) values(2,'sahar',100,20.25,'2.7.2025');
+
+insert into tovary(nn,nametov,cena,koltov,datgod) values(3,'sol',236,2.45,'2.7.2030');
+
+insert into tovary(nn,nametov,cena,koltov,datgod) values(4,'muka',54,45.45,'14.7.2030');
+
+insert into tovary(nn,nametov,cena,koltov,datgod) values(5,'psheno',34,25.45,'17.7.2030');
+
+create table prihod(nn integer not null primary key,nametov varchar(20),kolvo numeric(11,5),namepos varchar(20),dat date);
+
+insert into rashod(nn,nametov,kolvo,namepok,dat) values(21,'psheno',3.522,'SELVER','15.07.2020');
+insert into rashod(nn,nametov,kolvo,namepok,dat) values(22,'psheno',5.53,'MUDER','18.07.2020');
+insert into rashod(nn,nametov,kolvo,namepok,dat) values(23,'psheno',6.54563,'HRENER','19.07.2020');
+insert into rashod(nn,nametov,kolvo,namepok,dat) values(24,'psheno',7.56,'VALER','14.07.2020');
+insert into rashod(nn,nametov,kolvo,namepok,dat) values(25,'psheno',8.89,'SHPALER','19.07.2020');
+
+create table rashod(nn integer not null primary key,nametov varchar(20),kolvo numeric(11,5),namepok varchar(20),dat date);
+
+
+select nametov,  sum(kolvo) mrp  from rashod  group by nametov;
+select nametov,  sum(kolvo) mrp  from prihod  group by nametov;
+
+select p.nametov,  sum(p. kolvo) mrp,r.nametov, sum(r.kolvo) pzr  from prihod p right join rashod r on p.nametov = r nametov  group by p.nametov;
+
+
+
+select count(nn)  from prihod p join rashod r on p.nametov = r.nametov group by p.nametov; 
+
+
+select sum(p.kolvo), sum(r.kolvo) from prihod p, rashod r where p.nametov = r.nametov group by p.nametov; 
+
+select  SUM(p.kolvo - r.kolvo) popa , r.nametov, r.namepok  from prihod p right  join  rashod r on p.nametov = r.nametov and p.namepos = 'jon'and r.namepok ='SELVER'  group by r.nametov,r.namepok; 
+
+
+
+
+select p.*,t.cena from orihod p, tovary t where t.nametov = p.nametov;
+
+select p.*,t.cena, p.kolvo * t.cena stoimost from prihod p, tovary t where t.nametov = p.nametov;
+
+select p.*,t.cena, p.kolvo * t.cena stoimost from prihod p right join tovary t on t.nametov = p.nametov;
+
+select p.*, k.*, t.cena, t.nametov,  p.kolvo * t.cena stoimost   from prihod p  join y t, rashod k  on t.nametov = p.nametov;
+
+select p.nn, t.cena, p.nametov, p.namepos,p.kolvo,  k.nametov, k.namepok, k.kolvo   from prihod p, tovary t, rashod k  where  t.nametov = p.nametov and p.nametov = k.nametov and k.namepok = 'SHPALER';
+
+
+select  p.nametov, sum(p.kolvo) pos,sum(k.kolvo) ras, sum(p.kolvo) -  sum(k.kolvo) ost  from  prihod p, tovary t, rashod k  where  t.nametov = p.nametov and p.nametov = k.nametov group by p.nametov ;
+
+select sum(k.kolvo),  k.namepok  from  prihod p join rashod k on  p.nametov = k.nametov group by k.namepok ;
+
+
+
+select p.FirstName, p.LastName, p.persinid, a.persinid, a.City, a.State from adress a left join  person p on p.PersinId = a.PersinId;
+
+select p.FirstName, p.LastName, p.persinid, a.persinid, a.City, a.State from adress a right join  person p on p.PersinId = a.PersinId;
+
+
+select m.salary from employee m, employee j group by m.salary having min(m.salary) < avg(j.salary);
+
+select min(m.salary) SecondHighestSalary from employee m, employee j group by m.salary having min(m.salary) < avg(j.salary) and min(m.salary) > 100;
+
+{"headers": ["SecondHighestSalary"], "values": [[200]]}
+
+select min(m.salary) SecondHighestSalary from employee m, employee j group by m.salary having min(m.salary) < avg(j.salary) and min(m.salary) > min(j.salary);
+
+
+/////////////176 task solve
+select min(salary) SecondHighestSalary from employee where salary <> (select min(salary) from employee);
+//////////////////// have question &&&?????
+
+/////////182. Duplicate Emails
+select Email from Schema group by Email having count(Email) >= 2;
+////////////// ok ok ok
+
+
+////////////////183. Customers Who Never Order
+select  name Customers  from customers where customers.id not in (select customerid from orders);
+////////////// ok ok ok
+
+
+select min(salary) SecondHighestSalary from employee where salary <> (select min(salary) from employee where salary <> (select min(salary) from employee ));
+
+select d.Name Department, e.Name Employee, e.Salary from Employee e left join Department d on e.DepartmentId = d.Id  group by e.DepartmentId;
+
+select d.Name Department, e.Name Employee, e.Salary from Employee e, Department d where e.DepartmentId = d.Id  group by e.DepartmentId having min(e.Salary) = e.Salary;
+
+select d.name Department, e.name Employee, e.salary from employee e, department d where e.departmentid = d.id  group by e.departmentid;
+select d.name Department, e.name Employee, e.salary from employee e, department d where e.departmentid = d.id;
+
+SELECT d.id, e.name, e.salary FROM employee e, department d where salary in  (SELECT  max(salary) FROM Employee e right join Department d ON e.DepartmentId = d.Id group by e.departmentid);
+
+
+SELECT Department.name AS Department, Employee.name AS Employee, Salary FROM Employee JOIN Department ON Employee.DepartmentId = Department.Id WHERE (Employee.DepartmentId, Salary) IN (SELECT DepartmentId, MAX(Salary) FROM  Employee GROUP BY DepartmentId);
+
+SELECT d.id, e.name, e.salary FROM employee e, department d where e.departmentid = d.id and salary in  (SELECT  max(salary) FROM Employee e right join Department d ON e.DepartmentId = d.Id group by e.departmentid);
+
+
+
+//////////////////184. Department Highest Salary
+SELECT d.id, e.name, e.salary FROM employee e, department d where e.departmentid = d.id and salary in  (SELECT  max(salary) FROM Employee e right join Department d ON e.DepartmentId = d.Id group by e.departmentid);
+////////////// ok ok ok well;
+
+SELECT d.name Department, e.name Employee, e.salary Salary FROM employee e, department d where e.departmentid = d.id and salary in  (SELECT  max(salary) FROM Employee e right join Department d ON e.DepartmentId = d.Id group by e.departmentid) order by e.salary;
+
+SELECT 
+    d.name Department, e.name Employee, e.salary Salary 
+FROM 
+    employee e, department d 
+where 
+    e.departmentid = d.id 
+    and 
+        salary in (SELECT  max(salary) FROM Employee where departmentid = e.departmentid) order by d.name;
+
+
+
+///////////////////196. Delete Duplicate Emails
+select * from perso where id in (select min(id) from perso group by email);
+//////////////okokok;
+
+select q.id from weather w, weather q where w.recorddate < q.recorddate  and q.recorddate - w.recorddate = 1 and w.temperature < q.temperature;
+
+
+///////////////197. Rising Temperature
+select q.id from weather w, weather q where w.recorddate < q.recorddate  and q.recorddate - w.recorddate = 1 and w.temperature < q.temperature;
+////////////////okokok;
+
+
+/////////////////////////////////175. Combine Two Tables
+select Person.FirstName, Person.LastName, Address.City, Address.State from Person left join Address on Person.PersonId = Address.PersonId; for leetcode my table not corectly
+
+
+
+
+select  min(e.salary) SecondHighestSalary from employee e, employee m where e.salary > m.salary;
+
+set term ^ ;
+ALTER PROCEDURE EMMI() RETURNS (SecondHighestSalary integer) AS 
+DECLARE VARIABLE c integer;
+BEGIN
+c = 0;
+FOR 
+SELECT DISTINCT(SALARY) FROM EMPLOYEE ORDER BY SALARY
+INTO:SecondHighestSalary
+DO 
+BEGIN
+c = c + 1;
+IF (c = 4) THEN BEGIN
+SUSPEND;
+END
+END
+END ^
+set term ; ^
+
+CREATE PROCEDURE EMMI() RETURNS (SecondHighestSalary integer) AS 
+DECLARE VARIABLE c integer;
+BEGIN
+c = 0;
+FOR 
+SELECT DISTINCT(SALARY) FROM EMPLOYEE ORDER BY SALARY
+INTO:SecondHighestSalary
+DO 
+BEGIN
+c = c + 1;
+IF (c = 3) THEN BEGIN
+SUSPEND;
+END
+END
+END 
+
+CREATE PROCEDURE AKADEMSPR (
+  DAN TIMESTAMP,
+  DAK TIMESTAMP,
+  UNIKAL VARCHAR(10),
+  FA VARCHAR(2),
+  KUR VARCHAR(4),
+  GRU VARCHAR(5),
+  VI1 VARCHAR(4),
+  VI2 VARCHAR(4),
+  VI3 VARCHAR(4),
+  SH VARCHAR(5),
+  KA VARCHAR(2),
+  FAKK VARCHAR(2),
+  KUI VARCHAR(2),
+  PPP INTEGER,
+  OTC VARCHAR(1),
+  NRR VARCHAR(2),
+  NRR1 VARCHAR(2)
+) RETURNS (
+  UN VARCHAR(10),
+  GR VARCHAR(5),
+  N INTEGER,
+  FI VARCHAR(30),
+  SHI VARCHAR(5),
+  VIDI VARCHAR(4),
+  DISA VARCHAR(150),
+  OCA INTEGER,
+  OCA1 INTEGER,
+  SEE VARCHAR(2),
+  KPER INTEGER,
+  KOLCH VARCHAR(6),
+  PREPOD VARCHAR(30)
+) AS                           
+DECLARE VARIABLE  N1 INTEGER;
+DECLARE VARIABLE  DDD DATE;
+DECLARE VARIABLE  CH INTEGER;
+DECLARE VARIABLE  CH1 INTEGER;
+DECLARE VARIABLE  GRUI VARCHAR(10);
+DECLARE VARIABLE  FII VARCHAR(30);
+DECLARE VARIABLE  CHOB INTEGER;
+DECLARE VARIABLE  CHNOL INTEGER;
+DECLARE VARIABLE  CHRAZ INTEGER;
+
+BEGIN
+CH=0;CH1=0;CHNOL=0;CHOB=0;CHRAZ=0;
+FOR
+SELECT
+DATA,SHIFR,UNIK,NN,VID,OC,OC1,GRUPPA,SEM 
+FROM UCHEBF3
+WHERE
+DATA  BETWEEN :DAN AND :DAK
+AND UNIK CONTAINING  (:UNIKAL)
+AND (VID CONTAINING  (:VI1) OR VID CONTAINING  (:VI2) OR VID CONTAINING  (:VI3)) 
+AND SHIFR CONTAINING  (:SH)
+AND KAF CONTAINING  (:KA)
+AND DIF CONTAINING  (:FAKK)
+AND B CONTAINING  (:KUI)
+/AND OT CONTAINING  (:OTC)/ 
+AND NN BETWEEN :NRR AND :NRR1
+/AND NN=:NRR1/
+ORDER BY UNIK,DATA,SHIFR,VID
+INTO:DDD,:SHI,:UN,:N,:VIDI,:OCA,:OCA1,:GR,:SEE
+DO
+BEGIN
+CH1=CH1+1; 
+
+SELECT FIO
+FROM GRUPF3
+WHERE
+PRIM2=:UN 
+AND NN=:N
+INTO:FI;
+
+SELECT NOM
+FROM KONT
+WHERE
+DATA=:DDD
+/OR/
+/(DATA  BETWEEN :DDD AND :DAK) AND/
+AND
+UNIK=:UN 
+AND
+/GRUPPA=:GR/
+
+/AND/ 
+FIO=:FI
+AND NN=:N
+AND SHIFR=:SHI
+AND VID=:VIDI 
+/ORDER BY DATA,GRUPPA,NN,SHIFR,VID/
+INTO:KPER;
+
+SELECT NAM
+FROM NAMEDIS
+WHERE
+SHIFR=:SHI AND ST='N'
+INTO:DISA;
+
+IF (:DISA IS NULL) THEN BEGIN
+SELECT NAM
+FROM NAMEDIS
+WHERE
+SHIFR=:SHI AND ST='S'
+INTO:DISA;
+END
+
+
+
+
+IF (:CH1=1) THEN BEGIN GRUI=:UN; N1=:N;FII=:FI; END
+
+
+IF ((:N=N1) AND (:FI=FII) AND (:UN=GRUI)) THEN BEGIN
+CH=:CH+1; 
+IF (:CH>1) THEN BEGIN FI=NULL; UN=NULL;N=NULL; END
+END ELSE BEGIN
+IF (:CH1=1) THEN BEGIN CH=0; END ELSE BEGIN CH=1; END
+GRUI=:UN; N1=:N;FII=:FI; END
+
+
+CHOB=CHOB+1;
+
+IF (:FI  IS NULL) THEN BEGIN CHNOL=CHNOL+1; END
+
+CHRAZ=CHOB-CHNOL;
+
+/KPER=NULL;/
+
+
+
+SUSPEND;
+
+DISA=NULL; 
+KPER=NULL;
+END
+
+UN=NULL; GR=NULL; N=NULL; FI=NULL; VIDI=NULL; SHI=NULL;
+
+DISA=NULL; OCA=NULL; OCA1=NULL;  SEE=NULL;
+/KPER=NULL;/
+KOLCH=NULL;PREPOD=NULL;
+
+SHI=CHRAZ; FI='Summ';
+
+SUSPEND;
+
+
+
+END
